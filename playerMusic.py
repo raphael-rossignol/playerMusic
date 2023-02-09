@@ -68,8 +68,14 @@ stop_button.place(x=240, y=460)
 loop_button = Button(player, text="Loop", bg='black', fg='white', command=lambda: loop())
 loop_button.place(x=185, y=570)
 
+volume = Scale(player, from_=100, to=0)
+volume.set(50)
+volume.configure(bg='black', fg='white')
+volume.place(x=730, y=480)
+
 song_choice = OptionMenu(player, song, *playlist)
 song_choice.place(x=380, y=520)
 song_choice.configure(bg="black", fg="white")
+
 
 player.mainloop()
