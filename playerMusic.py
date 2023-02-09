@@ -1,5 +1,6 @@
 import os
 from tkinter import *
+from tkinter import filedialog
 from pygame import mixer
 
 # Global Layout
@@ -20,6 +21,10 @@ def search_songs():     # Searches the files from the directory list_of_songs
 
 
 search_songs()
+
+
+def song_managing():
+   filedialog.askopenfilename(initialdir='list_of_songs')
 
 
 def play():     # Uses the list from OptionMenu song_choice to load the selected music
@@ -67,6 +72,9 @@ stop_button.place(x=240, y=460)
 
 loop_button = Button(player, text="Loop", bg='black', fg='white', command=lambda: loop())
 loop_button.place(x=185, y=570)
+
+managing_button = Button(player, text="Manage songs", bg='black', fg='white', command=lambda: song_managing())
+managing_button.place(x=735, y=3)
 
 volume = Scale(player, from_=100, to=0)
 volume.set(50)
