@@ -23,7 +23,7 @@ def search_songs():     # Searches the files from the directory list_of_songs
 search_songs()
 
 
-def song_managing():
+def song_managing():        # Open the directory where the songs are
    filedialog.askopenfilename(initialdir='list_of_songs')
 
 
@@ -76,10 +76,14 @@ loop_button.place(x=185, y=570)
 managing_button = Button(player, text="Manage songs", bg='black', fg='white', command=lambda: song_managing())
 managing_button.place(x=735, y=3)
 
+# Volume parameters
+
 volume = Scale(player, from_=100, to=0)
 volume.set(50)
 volume.configure(bg='black', fg='white')
 volume.place(x=730, y=480)
+
+# Menu to choose what song is going to be played
 
 song_choice = OptionMenu(player, song, *playlist)
 song_choice.place(x=380, y=520)
